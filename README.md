@@ -10,6 +10,8 @@ I have limited experience with Zig and even less experience with Blockchain.
 ### Pre requisite
 Get yourself [Zig >= 0.9.1](https://ziglang.org/download/).
 
+I can't have this running properly on Windows.
+
 ### Have fun with the blockchain
 
 ```
