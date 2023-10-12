@@ -17,11 +17,15 @@ const Command = union(enum) {
             Command.quit => std.process.exit(0),
 
             Command.new => |data| {
-                try writer.print("{s}", .{blockchain.new_block(data)});
+                if (blockchain.new_block(data)) |new_block| {
+                    try writer.print("{s}", .{new_block});
+                } else |err| {
+                    try writer.print("Can't create new block: {any}", .{err});
+                }
             },
 
             Command.list => {
-                for (blockchain.blocks.items) |block, i| {
+                for (blockchain.blocks.items, 0..) |block, i| {
                     try writer.print("Index: {d}\n{s}\n", .{ i, block });
                 }
             },

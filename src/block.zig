@@ -55,7 +55,7 @@ pub const Block = struct {
             var hash = try self.calculate_hash(nonce);
 
             if (valid_hash(hash)) {
-                for (hash) |v, i| {
+                for (hash, 0..) |v, i| {
                     self.hash[i] = v;
                 }
                 break;
@@ -107,7 +107,7 @@ pub const Block = struct {
             try writer.print("=== Block\n", .{});
             try writer.print("  data: {s}\n", .{self.data});
             try writer.print("  hash: {s}\n", .{self.hash});
-            try writer.print("  prev_hash: {s}\n", .{self.prev_hash});
+            try writer.print("  prev_hash: {?s}\n", .{self.prev_hash});
         }
     }
 };
