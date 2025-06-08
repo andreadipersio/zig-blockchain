@@ -1,3 +1,4 @@
+.zig-cache/
 zig-cache/
 src/zig-cache/
 zig-out/

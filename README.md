@@ -15,7 +15,7 @@ I can't have this running properly on Windows.
 ### Have fun with the blockchain
 
 ```
-> zig run src/main.zig
+> zig build run
 ```
 
 ```

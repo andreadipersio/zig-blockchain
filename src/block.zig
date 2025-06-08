@@ -52,7 +52,7 @@ pub const Block = struct {
         var nonce: u64 = 0;
 
         while (true) {
-            var hash = try self.calculate_hash(nonce);
+            const hash = try self.calculate_hash(nonce);
 
             if (valid_hash(hash)) {
                 for (hash, 0..) |v, i| {
